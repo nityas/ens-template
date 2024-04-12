@@ -1,7 +1,13 @@
 import '@rainbow-me/rainbowkit/styles.css'
 import { Metadata } from 'next'
 
-import { ClientProviders } from '@/lib/providers'
+// import { ClientProviders } from '@/lib/providers'
+
+import dynamic from 'next/dynamic';
+
+const ClientSideOnlyComponent = dynamic(() => import('@/lib/providers'), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: 'ENS Frontend Template',
@@ -16,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ClientProviders>{children}</ClientProviders>
+        <ClientSideOnlyComponent>{children}</ClientSideOnlyComponent>
       </body>
     </html>
   )

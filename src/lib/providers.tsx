@@ -12,7 +12,7 @@ import { wagmiConfig } from '@/lib/web3'
 
 const queryClient = new QueryClient()
 
-export function ClientProviders({ children }: { children: React.ReactNode }) {
+export default function ClientProviders({ children }: { children: React.ReactNode }) {
   const [isMounted, setIsMounted] = useState(false)
   useEffect(() => setIsMounted(true), [])
 
