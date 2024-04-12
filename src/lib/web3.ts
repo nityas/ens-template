@@ -16,20 +16,26 @@ import {
   getCapsuleWallet,
 } from "@usecapsule/rainbowkit-wallet";
 
-const {
-  NEXT_PUBLIC_WALLETCONNECT_ID,
-  NEXT_PUBLIC_CAPSULE_API_KEY,
-  NEXT_PUBLIC_CAPSULE_ENV
-} = process.env
+const WALLETCONNECT_ID = process.env.NEXT_PUBLIC_WALLETCONNECT_ID
+const CAPSULE_API_KEY = process.env.NEXT_PUBLIC_CAPSULE_API_KEY
+const CAPSULE_ENV = process.env.NEXT_PUBLIC_CAPSULE_ENV
 
-if (!NEXT_PUBLIC_WALLETCONNECT_ID) {
+if (!WALLETCONNECT_ID) {
   throw new Error('Missing NEXT_PUBLIC_WALLETCONNECT_ID')
+}
+
+if (!CAPSULE_API_KEY) {
+  throw new Error('Missing NEXT_PUBLIC_CAPSULE_API_KEY')
+}
+
+if (!CAPSULE_ENV) {
+  throw new Error('Missing NEXT_PUBLIC_CAPSULE_ENV')
 }
 
 const getCapsuleWalletOpts = {
   capsule: {
-    environment: NEXT_PUBLIC_CAPSULE_ENV,
-    apiKey: NEXT_PUBLIC_CAPSULE_API_KEY,
+    environment: CAPSULE_ENV,
+    apiKey: CAPSULE_API_KEY,
     constructorOpts: {
       // passkey configs
       portalBackgroundColor: '#FFFFFF',
@@ -61,7 +67,7 @@ const chains = [mainnet] as const
 
 export const wagmiConfig = getDefaultConfig({
   appName: 'ENS Frontend Template',
-  projectId: NEXT_PUBLIC_WALLETCONNECT_ID,
+  projectId: WALLETCONNECT_ID,
   transports: {
     [mainnet.id]: http(),
   },
