@@ -71,6 +71,7 @@ const capsuleWalletIntegratedOpts: GetCapsuleIntegratedOpts = {
   nameOverride: `Sign in with ${APP_NAME}`,
   iconOverride:
     'https://cryptologos.cc/logos/ethereum-name-service-ens-logo.png',
+  iconBackgroundOverride: '#ffffff',
 }
 
 export const capsuleIntegratedProps = {
@@ -82,6 +83,7 @@ export const capsuleIntegratedProps = {
     OAuthMethod.APPLE,
     OAuthMethod.FACEBOOK,
   ],
+  logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvaJ1zKHDtEqPik1OsCoPvQ8S92j7-AI1Q6F2j4yyE-Q&s',
 }
 
 // Add Capsule as a custom connector
