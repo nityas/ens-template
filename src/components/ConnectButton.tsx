@@ -1,5 +1,5 @@
 import { Button, Profile, mq } from '@ensdomains/thorin'
-import { ConnectButton as ConnectButtonBase } from '@rainbow-me/rainbowkit'
+import { ConnectButton as ConnectButtonBase } from '@usecapsule/rainbowkit'
 import styled, { css } from 'styled-components'
 import { useDisconnect } from 'wagmi'
 
