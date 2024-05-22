@@ -90,16 +90,16 @@ export const capsuleIntegratedProps = {
 const connectors = connectorsForWallets(
   [
     {
+      groupName: 'Custom',
+      wallets: [getCapsuleWalletIntegrated(capsuleWalletIntegratedOpts)],
+    },
+    {
       groupName: 'Recommended',
       wallets: [rainbowWallet, metaMaskWallet],
     },
     {
       groupName: 'Others',
       wallets: [coinbaseWallet, walletConnectWallet],
-    },
-    {
-      groupName: 'Custom',
-      wallets: [getCapsuleWalletIntegrated(capsuleWalletIntegratedOpts)],
     },
   ],
   {
